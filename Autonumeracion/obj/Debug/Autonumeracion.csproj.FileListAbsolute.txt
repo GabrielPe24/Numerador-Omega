@@ -1,0 +1,9 @@
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Debug\Autonumeracion.exe.config
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Debug\Autonumeracion.exe
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Debug\Autonumeracion.pdb
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.Form1.resources
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.Properties.Resources.resources
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.csproj.GenerateResource.cache
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.exe
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.pdb
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Debug\Autonumeracion.csprojAssemblyReference.cache

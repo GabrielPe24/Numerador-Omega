@@ -1,0 +1,8 @@
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Release\Autonumeracion.exe.config
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Release\Autonumeracion.exe
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\bin\Release\Autonumeracion.pdb
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Release\Autonumeracion.Form1.resources
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Release\Autonumeracion.Properties.Resources.resources
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Release\Autonumeracion.csproj.GenerateResource.cache
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Release\Autonumeracion.exe
+C:\Users\Gabriel\Downloads\Documentos\Autonumeracion\Autonumeracion\obj\Release\Autonumeracion.pdb
