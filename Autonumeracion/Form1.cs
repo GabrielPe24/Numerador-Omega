@@ -155,7 +155,7 @@ namespace Autonumeracion
                         RectangleF rectF3 = new RectangleF(157, 655, 120, 45); //Abajo-Izquierda.
                         RectangleF rectF4 = new RectangleF(667, 655, 120, 45); //Abajo-Derecha.
                         
-                        Image newImage = Autonumeracion.Properties.Resources.Borde1;
+                        Image newImage = Autonumeracion.Properties.Resources.Borde1; //Agrego Borde.
 
                         e.Graphics.DrawImage(newImage, rectF1); //Imagen-Arriba-Izquierda.
                         e.Graphics.DrawImage(newImage, rectF2); //Imagen-Arriba-Derecha.
