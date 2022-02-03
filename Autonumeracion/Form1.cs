@@ -19,6 +19,10 @@ namespace Autonumeracion
         }
 
         private long num = 0; //Declaro una variable privada num, la cual se usara para la cantidad de paginas finales.
+        private int verificador = 0;
+        private long a1 = 0;
+        private long a2 = 0;
+        private long a3 = 0;
 
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -46,7 +50,7 @@ namespace Autonumeracion
                 MessageBox.Show("El intervalo no puede ser CERO.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
 
-            else if (radioButton10.Checked == true) //Si el Formulario es el N° 11. Uso Hoja Tamaño Legal.
+            else if (radioButton9.Checked == true || radioButton10.Checked == true || radioButton11.Checked == true) //Si el Formulario es el N° 11. Uso Hoja Tamaño Legal.
             {
                 printDocument1 = new PrintDocument();
                 PrinterSettings ps = new PrinterSettings();
@@ -94,8 +98,20 @@ namespace Autonumeracion
                 long pagini = Convert.ToInt64(numericUpDown2.Text);
                 long pagfnl = Convert.ToInt64(numericUpDown1.Text);
                 long intervalos = Convert.ToInt64(numericUpDown3.Text);
-                int contador = 0;                
 
+                long s1 = 1;
+                long s2 = 0;
+                long s3 = 0;
+                long c1 = 0;
+                long c2 = 0;
+                long c3 = 0;
+
+                c1 = pagfnl;
+                c2 = pagfnl + intervalos * 1;
+                c3 = pagfnl + intervalos * 2;
+
+                int contador = 0;
+                
                 if (radioButton11.Checked == true) //Imprimo Formulario N° 11.
                 {
                     int Numero = 0;    
@@ -117,7 +133,7 @@ namespace Autonumeracion
 
                         if (((Numero % 5) == 0) || ((Numero % 5) == 5))
                         {
-                            offsetY2 += ((int)fontHeight + 300); //Espacios entre ambos numeros.
+                            offsetY2 += ((int)fontHeight + 500); //Espacios entre ambos numeros.
                         }
                         else
                         {
@@ -155,7 +171,7 @@ namespace Autonumeracion
                         RectangleF rectF3 = new RectangleF(157, 655, 120, 45); //Abajo-Izquierda.
                         RectangleF rectF4 = new RectangleF(667, 655, 120, 45); //Abajo-Derecha.
                         
-                        Image newImage = Autonumeracion.Properties.Resources.Borde1; //Agrego Borde.
+                        Image newImage = Autonumeracion.Properties.Resources.Borde1;
 
                         e.Graphics.DrawImage(newImage, rectF1); //Imagen-Arriba-Izquierda.
                         e.Graphics.DrawImage(newImage, rectF2); //Imagen-Arriba-Derecha.
@@ -195,32 +211,67 @@ namespace Autonumeracion
 
                 else if (radioButton9.Checked == true) //Imprimo Formulario N° 3.
                 {
-                    while ((num + pagfnl) <= pagini)
-                    {
-                        contador = contador + 1;
-                        graphic.DrawString("N° " + (num + pagfnl), font, brush, startXD, startY + offsetY2);
-                        
+                    while (verificador <= (intervalos + 2))
+                    {   
+                        if (verificador != 0)
+                        {
+                            contador = (verificador + 1);
+                            c1 = a1 + 1;
+                            c2 = a2 + 1;
+                            c3 = a3 + 1;
+                        }
+                        else
+                        {
+                            contador = contador + 1;
+                        }
+                        if (s1 == 1)
+                        {
+                            graphic.DrawString("N° " + (c1), font, brush, startXD - 50, startY + offsetY2);
+                            s1 = 0;
+                            s2 = 1;
+                        }
+                        else if (s2 == 1)
+                        {
+                            graphic.DrawString("N° " + (c2), font, brush, startXD - 50, startY + offsetY2);    
+                            s2 = 0;
+                            s3 = 1;
+                        }
+                        else if (s3 == 1)
+                        {
+                            graphic.DrawString("N° " + (c3), font, brush, startXD - 50, startY + offsetY2);
+                            s3 = 0;
+                            s1 = 1;
+                        }
+
                         if ((contador % 3) == 0)
                         {
-                            offsetY2 += ((int)fontHeight + 490); //Espacios entre ambos numeros.
+                            offsetY2 += ((int)fontHeight + 420); //Espacios entre ambos numeros.
                         }
                         else
                         {
                             offsetY2 += ((int)fontHeight + 420); //Espacios entre ambos numeros.    
                         }
 
-                        if (offsetY2 >= (pageHeight + 420))
+                        if (verificador == (intervalos + 2) && s1 == 1)
+                        {
+                            e.HasMorePages = false;
+                            return;
+                        }
+
+                        if (offsetY2 >= (pageHeight + 490))
                         {
                             e.HasMorePages = true;
                             offsetY2 = 0;
+                            verificador = contador;
+                            a1 = c1;
+                            a2 = c2;
+                            a3 = c3;
                             return;
                         }
                         else
                         {
                             e.HasMorePages = false;
-                            
                         }
-                        num = num + intervalos;
                     }
                     pagini = 0;
                     pagfnl = 0;
